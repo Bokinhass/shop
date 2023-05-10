@@ -44,9 +44,10 @@ export const Product = styled('a', {
     opacity: 0,
     transition: "all 0.2s ease-in-out",
 
-    // strong: {
-    //   fontSize: '$xl',
-    // },
+    strong: {
+      fontSize: '$lg',
+      color: '$gray100',
+    },
 
     span: {
       fontSize: "$xl",
