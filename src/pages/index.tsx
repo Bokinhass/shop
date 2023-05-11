@@ -14,7 +14,7 @@ interface HomeProps
     id: string
     name: string
     imageUrl: string
-    price: number
+    price: string
   }[]
 }
 
@@ -60,11 +60,10 @@ export default function Home({ products }: HomeProps)
 export const getStaticProps: GetStaticProps = async () =>
 {
   const response = await stripe.products.list({
-    expand: ['data.default_price']
+    expand: ['data.default_price'],
   })
 
-  const products = response.data.map(product =>
-  {
+  const products = response.data.map(product => {
     const price = product.default_price as Stripe.Price
 
     return {
